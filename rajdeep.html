@@ -1,11 +1,249 @@
-<!DOCTYPE html>
+Would you like me to add the subpages (Professional, Solo, Team) next — each styled consistently with this main page?<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rajdeep Debnath | Game Designer & Developer</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0f0f0f;
+      color: #f2f2f2;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 5%;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 15, 15, 0.8);
+      backdrop-filter: blur(10px);
+    }
+
+    header h1 {
+      font-weight: 600;
+      font-size: 1.4rem;
+      color: #ffffff;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: #ccc;
+      margin-left: 2rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      padding: 0 1rem;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background: transparent;
+      border: 2px solid #fff;
+      color: #fff;
+      padding: 0.8rem 1.6rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: #fff;
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    /* PROJECT SECTION */
+    .projects {
+      padding: 6rem 5%;
+      background-color: #121212;
+      text-align: center;
+    }
+
+    .projects h2 {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      cursor: pointer;
+      background: #1a1a1a;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.4s ease, filter 0.4s ease;
+      opacity: 0.8;
+    }
+
+    .project-card h3 {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      font-size: 1.4rem;
+      color: #fff;
+      z-index: 2;
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.7) 100%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 1;
+    }
+
+    .project-card:hover img {
+      transform: scale(1.1);
+      filter: brightness(0.8);
+    }
+
+    .project-card:hover::before {
+      opacity: 1;
+    }
+
+    .project-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #0f0f0f;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    
+  <header>
+    <h1>Rajdeep Debnath</h1>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Game Designer & Developer</h2>
+      <p>Crafting immersive worlds and interactive experiences through design and code.</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn">View My Work</a>
+        <a href="Rajdeep_Debnath_CV.pdf" download class="btn">Download CV</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+    <h2>Explore My Work</h2>
+    <div class="project-grid">
+      <div class="project-card" onclick="location.href='professional.html'">
+        <img src="/Assets/GOTe25.jpg" alt="Professional Works">
+        <h3>Professional Works</h3>
+      </div>
+
+      <div class="project-card" onclick="location.href='solo.html'">
+        <img src="https://images.unsplash.com/photo-1607082349566-1873427e91cc?auto=format&fit=crop&w=800&q=80" alt="Solo Projects">
+        <h3>Solo Personal Projects</h3>
+      </div>
+
+      <div class="project-card" onclick="location.href='team.html'">
+        <img src="https://images.unsplash.com/photo-1590608897129-79da98d159f2?auto=format&fit=crop&w=800&q=80" alt="Team Projects">
+        <h3>Team Personal Projects</h3>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p>© 2025 Rajdeep Debnath. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
