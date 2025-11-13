@@ -1,0 +1,111 @@
+/* Reset styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Add box-sizing to include padding and borders in the element's total width and height */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%; /* Adjust width to occupy 90% of the viewport width */
+    max-width: 2110px; /* Set a maximum width to prevent content from becoming too wide on larger screens */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.background {
+    background: rgba(0, 0, 0, 0.7) url(/IMG/July-1-video-game-design-program.jpg);
+    background-size: cover;
+    /* background-position: center; */
+}
+
+header {
+    color: #fff;
+    padding: 10px 0;
+}
+
+header h1 {
+    font-size: 24px; /* Decrease font size for better readability on smaller screens */
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px; /* Reduce margin between navigation items */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px 0; /* Reduce padding for better spacing on smaller screens */
+}
+
+#hero {
+    text-align: center;
+    color: white;
+    padding: 100px 20px; /* Adjust padding for better spacing on smaller screens */
+}
+
+#hero h1 {
+    font-size: 24px; /* Decrease font size for better readability on smaller screens */
+    margin-bottom: 10px; /* Reduce margin bottom for better spacing on smaller screens */
+}
+
+#hero h2 {
+    font-size: 20px; /* Decrease font size for better readability on smaller screens */
+    margin-bottom: 10px; /* Reduce margin bottom for better spacing on smaller screens */
+}
+
+.cover {
+    width: 90%; /* Adjust width to occupy 90% of the viewport width */
+    max-width: 100%; /* Set a maximum width to prevent content from becoming too wide on larger screens */
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+}
+
+.Professional {
+     margin: 3%;
+}
+
+.Personal {
+    margin: 3%;
+}
+
+.Game {
+    margin: 3%;
+}
+
+#about {
+      background-color: #333;
+      color: #ffffff;
+}
+
+#contact h2 {
+    font-size: 20px; /* Decrease font size for better readability on smaller screens */
+    margin-bottom: 10px; /* Reduce margin bottom for better spacing on smaller screens */
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+@media only screen and (max-width: 900px) 
+{
+    .cover {
+        flex-direction: column;
+    }
+}
