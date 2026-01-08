@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Project Details</title>
+
+<style>
+body {
+  background:#0d0d0d;
+  color:#fff;
+  font-family:Arial;
+  padding:40px;
+}
+
+h1 {
+  color:#00eaff;
+}
+
+.section {
+  margin-top:30px;
+}
+
+.gallery img {
+  width:100%;
+  max-width:700px;
+  border-radius:12px;
+  margin-bottom:15px;
+}
+
+.tag {
+  display:inline-block;
+  padding:6px 12px;
+  background:#00eaff;
+  color:#000;
+  border-radius:20px;
+  margin:5px 6px 0 0;
+  font-size:14px;
+}
+
+a.button {
+  display:inline-block;
+  margin-top:15px;
+  padding:10px 18px;
+  background:#00eaff;
+  color:#000;
+  border-radius:8px;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+iframe, video {
+  width:100%;
+  max-width:800px;
+  height:450px;
+  border-radius:12px;
+}
+</style>
+</head>
+
+<body>
+
+<h1 id="title"></h1>
+<p id="description"></p>
+
+<!-- Screenshots -->
+<div class="section gallery" id="screenshots"></div>
+
+<!-- Role -->
+<div class="section">
+  <h2>My Role & Responsibilities</h2>
+  <ul id="role"></ul>
+</div>
+
+<!-- Tech -->
+<div class="section">
+  <h2>Tech Used</h2>
+  <div id="tech"></div>
+</div>
+
+<!-- Video -->
+<div class="section" id="video"></div>
+
+<!-- Links -->
+<div class="section" id="links"></div>
+
+<script>
+const projects = {
+
+  "unreal-system": {
+    title: "Unreal Blueprint Gameplay System",
+    description: "Professional studio project focused on gameplay architecture.",
+    screenshots: ["/IMG/Profesonal1.jpg"],
+    role: [
+      "Gameplay Blueprint Logic",
+      "Interaction System",
+      "UI Integration",
+      "Optimization & Bug Fixing"
+    ],
+    tech: ["Unreal Engine", "Blueprints", "UMG"],
+    video: "https://www.youtube.com/embed/VIDEO_ID",
+    download: null
+  },
+
+  "ui-framework": {
+    title: "UI Framework System",
+    description: "Reusable UI framework for studio projects.",
+    screenshots: ["/IMG/Profesonal2.jpg"],
+    role: [
+      "Menu Flow Design",
+      "HUD System",
+      "UX Improvements"
+    ],
+    tech: ["Unreal Engine", "UMG", "Blueprints"],
+    video: null,
+    download: null
+  }
+
+};
+
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+const data = projects[id];
+
+document.getElementById("title").innerText = data.title;
+document.getElementById("description").innerText = data.description;
+
+// Screenshots
+data.screenshots.forEach(img=>{
+  document.getElementById("screenshots").innerHTML += `<img src="${img}">`;
+});
+
+// Role
+data.role.forEach(r=>{
+  document.getElementById("role").innerHTML += `<li>${r}</li>`;
+});
+
+// Tech
+data.tech.forEach(t=>{
+  document.getElementById("tech").innerHTML += `<span class="tag">${t}</span>`;
+});
+
+// Video
+if(data.video){
+  document.getElementById("video").innerHTML = `
+    <h2>Gameplay Video</h2>
+    <iframe src="${data.video}" allowfullscreen></iframe>
+  `;
+}
+
+// Download
+if(data.download){
+  document.getElementById("links").innerHTML =
+    `<a class="button" href="${data.download}" target="_blank">Download / Itch.io</a>`;
+}
+</script>
+
+</body>
+</html>
